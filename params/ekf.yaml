@@ -240,3 +240,13 @@ ekf_filter_node:
     # are ordered as x, y, z, roll, pitch, yaw, vx, vy, vz, vroll, vpitch, vyaw, ax, ay, az. Defaults to the diagonal values below
     # if unspecified. In this example, we specify only the diagonal of the matrix.
     # initial_estimate_covariance: [1e-9, 1e-9, 1e-9, 1e-9, 1e-9, 1e-9, 1e-9, 1e-9, 1e-9, 1e-9, 1e-9, 1e-9, 1e-9, 1e-9, 1e-9]
+
+    vio: /camera/odom/sample
+    vio_config: [true, true, false,  # x, y, z
+                       false, false, true, # roll, pitch, yaw
+                       true, true, false,  # vx, vy, vz
+                       false, false, true, # vroll, vpitch, vyaw
+                       false, false, false]  # ax, ay, az
+
+    vio_differential: false
+    vio_relative: false
